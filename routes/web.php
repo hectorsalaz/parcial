@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\administracion;
+use App\Http\Controllers\cliente\canino;
+use App\Http\Controllers\cliente\felino;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [administracion::class, 'index']);
+//Route::get('ini',[administracion::class, 'somo']);
+route::get('/ini', function(){
+    return view('ini.somos');
 });
+
+Route::get('/PERROS', [canino::class,'dog']);
+
+
+route::get('/Gatos', [felino::class,'felix']);
+Route::get('/qjr', [administracion::class, 'recla']);
+
